@@ -1,0 +1,16 @@
+syntax = "proto3";
+package timer;
+
+option java_multiple_files = true;
+option java_package = "com.anupcowkur.grpc_demo_android";
+option java_outer_classname = "TimerProto";
+
+service Timer {
+  rpc Timer(TimeRequest) returns (stream TimeResponse) {}
+}
+
+message TimeRequest {}
+message TimeResponse {
+  string time = 1;
+}
+
